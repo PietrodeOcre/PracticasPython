@@ -30,8 +30,12 @@ if __name__ == '__main__':
     '''
     #nombreLabel.place(x=100, y=100)
     
+    passwLabel = Label(miFrame, text="Password: ")
+    passwLabel.grid(row=1, column = 1,sticky="w",padx=4,pady=4)
+    
+    
     apellidoLabel = Label(miFrame, text="Apellido: ")
-    apellidoLabel.grid(row=1, column = 1,sticky="w",padx=4,pady=4)
+    apellidoLabel.grid(row=2, column = 1,sticky="w",padx=4,pady=4)
     '''
     Con la opcion sticky colocamos la alineacion del 
     elemento segun puntos cardinales en ingles
@@ -41,7 +45,7 @@ if __name__ == '__main__':
     o sus puntos intermedios combinando las letras 
     '''
     direccionLabel = Label(miFrame, text="Direccion: ")
-    direccionLabel.grid(row=2, column = 1,sticky="w",padx=4,pady=4)
+    direccionLabel.grid(row=3, column = 1,sticky="w",padx=4,pady=4)
     
     '''
     Podemos crear cuadros de texto para 
@@ -49,19 +53,24 @@ if __name__ == '__main__':
     '''
     cuadroNombre = Entry(miFrame)
     cuadroNombre.grid(row = 0, column = 2,padx=4,pady=4)
+    
+    cuadroPassw = Entry(miFrame)
+    cuadroPassw.grid(row = 1, column = 2,padx=4,pady=4)
+    cuadroPassw.config(show="*")
+    
     '''
-    padx y pady son para añadir padding vertical y horizontal
+    padx y pady son para anadir padding vertical y horizontal
     '''
     cuadroApellido=Entry(miFrame)
-    cuadroApellido.grid(row=1, column=2,padx=4,pady=4)
+    cuadroApellido.grid(row=2, column=2,padx=4,pady=4)
     
     cuadroDireccion=Entry(miFrame)
-    cuadroDireccion.grid(row=2, column=2,padx=4,pady=4)
+    cuadroDireccion.grid(row=3, column=2,padx=4,pady=4)
     
     '''
     Este boton solo cierra la ventana
     '''
-    Button(miFrame, text="Salir", command=raiz.quit).grid(row=3,column=1,sticky="w",padx=4,pady=4)
+    Button(miFrame, text="Salir", command=raiz.quit).grid(row=4,column=1,sticky="w",padx=4,pady=4)
     
     
     
