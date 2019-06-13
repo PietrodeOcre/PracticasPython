@@ -1,3 +1,4 @@
+
 '''
 Created on 9 jun. 2019
 
@@ -7,12 +8,13 @@ Created on 9 jun. 2019
 from Herencia.Vehiculo import Vehiculo
 from Herencia.Moto import Moto
 from Herencia.Quad import Quad
+from Herencia.VElectricos import VElectricos
 
 if __name__ == '__main__':
     
     miMoto = Moto("Honda", "CBR")
     
-    # miMoto.caballito()
+    #miMoto.caballito()
     
     miMoto.estado()
     
@@ -21,6 +23,8 @@ if __name__ == '__main__':
     miMoto2.caballito()
     
     miMoto2.estado()
+    
+    
     
     miQuad = Quad("Goes", "720Max")
     
@@ -31,5 +35,28 @@ if __name__ == '__main__':
     miFurgoneta = Vehiculo("Citroen", "Pickup")
     
     miFurgoneta.estado()
+    
+    miBici=VElectricos("Orbea", "HBO", 25)
+    
+    miBici.estado()
+    
+    print(isinstance(miBici, Vehiculo))
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     pass

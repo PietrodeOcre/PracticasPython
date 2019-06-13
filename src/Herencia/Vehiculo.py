@@ -10,6 +10,7 @@ class Vehiculo(object):
     classdocs
     '''
 
+
     def __init__(self, marca, modelo):
         '''
         Constructor
@@ -31,7 +32,7 @@ class Vehiculo(object):
         
     def estado(self):
         print("Marca: ", self.__marca, "\nModelo: ", self.__modelo,
-              "\nEn Marcha: ", self.__enMarcha, "\nAcelerado: ",
+              "\nEn Marcha: ", self.__enMarcha, "\nAcelerado: ", 
               self.__acelera, "\nFrenado: ", self.__frena, "\n")
         
     

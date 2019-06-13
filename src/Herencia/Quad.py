@@ -6,7 +6,6 @@ Created on 9 jun. 2019
 
 from Herencia.Moto import Moto
 
-
 class Quad(Moto):
     '''
     classdocs
