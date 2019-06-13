@@ -35,7 +35,7 @@ if __name__ == '__main__':
     #PAra rellentar la ventana con el frame automaticamente
     miFrame.pack(fill="both", expand = True)
     
-    miImagen=PhotoImage(file="Mibebe2.png")
+    miImagen=PhotoImage(file="Roberto.png")
     
     #miFrame.config(bg = "red")
     
