@@ -94,7 +94,7 @@ if __name__ == '__main__':
     '''
     scrollVert = Scrollbar(miFrame,command=textoComentario.yview())
     scrollVert.grid(row=4,column=3,sticky="nsew")
-    textoComentario.config(yscrollcommand=scrollVert.set)
+    textoComentario.config(wrap=NONE,yscrollcommand=scrollVert.set)
     
     '''
     Este boton solo cierra la ventana
