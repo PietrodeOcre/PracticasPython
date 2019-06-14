@@ -5,7 +5,6 @@ Created on 13 jun. 2019
 '''
 from Tkinter import *
 from click.decorators import command
-from Tkconstants import NSEW
 
 if __name__ == '__main__':
     
@@ -48,9 +47,6 @@ if __name__ == '__main__':
     direccionLabel = Label(miFrame, text="Direccion: ")
     direccionLabel.grid(row=3, column = 1,sticky="w",padx=4,pady=4)
     
-    comentariosLabel = Label(miFrame, text="Comentarios: ")
-    comentariosLabel.grid(row=4, column = 1,sticky="w",padx=4,pady=4)
-    
     '''
     Podemos crear cuadros de texto para 
     escribir en ellos
@@ -72,34 +68,9 @@ if __name__ == '__main__':
     cuadroDireccion.grid(row=3, column=2,padx=4,pady=4)
     
     '''
-    Para todo tipo de mensajes largos
-    Debemos agregar nosotros mismos la
-    posibilidad de que haga scroll
-    y tenemos que agregarle el tamanio en el 
-    constructor del Text
-    '''
-    textoComentario=Text(miFrame)
-    '''
-    El tamanio se puede aniadir en el 
-    propio constructor pero por legivilidad
-    lo coloco en otra linea
-    '''
-    textoComentario.config(width=23, height=5)
-    textoComentario.grid(row=4, column=2,padx=4,pady=4)
-
-    '''
-    Para crear una barra de desplazamiento en el
-    lateral del cuadro de texto se crea un
-    nuevo widget a continuacion del primero
-    '''
-    scrollVert = Scrollbar(miFrame,command=textoComentario.yview())
-    scrollVert.grid(row=4,column=3,sticky="nsew")
-    textoComentario.config(yscrollcommand=scrollVert.set)
-    
-    '''
     Este boton solo cierra la ventana
     '''
-    Button(miFrame, text="Salir", command=raiz.quit).grid(row=5,column=1,sticky="w",padx=4,pady=4)
+    Button(miFrame, text="Salir", command=raiz.quit).grid(row=4,column=1,sticky="w",padx=4,pady=4)
     
     
     
