@@ -3,9 +3,7 @@ Created on 13 jun. 2019
 
 @author: pietrodeocre
 '''
-from Tkinter import *
-from click.decorators import command
-from Tkconstants import NSEW
+from tkinter import *
 
 if __name__ == '__main__':
     
@@ -94,6 +92,7 @@ if __name__ == '__main__':
     '''
     scrollVert = Scrollbar(miFrame,command=textoComentario.yview())
     scrollVert.grid(row=4,column=3,sticky="nsew")
+
     textoComentario.config(wrap=NONE,yscrollcommand=scrollVert.set)
     
     '''
