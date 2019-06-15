@@ -90,10 +90,11 @@ if __name__ == '__main__':
     lateral del cuadro de texto se crea un
     nuevo widget a continuacion del primero
     '''
-    scrollVert = Scrollbar(miFrame,command=textoComentario.yview())
-    scrollVert.grid(row=4,column=3,sticky="nsew")
+    
+    yscrollbar = Scrollbar(miFrame,command=textoComentario.yview)
+    yscrollbar.grid(row=4,column=3, sticky=N + S)
 
-    textoComentario.config(wrap=NONE,yscrollcommand=scrollVert.set)
+    textoComentario.config(yscrollcommand=yscrollbar.set)
     
     '''
     Este boton solo cierra la ventana

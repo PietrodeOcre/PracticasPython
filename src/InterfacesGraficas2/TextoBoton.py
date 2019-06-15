@@ -3,8 +3,8 @@ Created on 13 jun. 2019
 
 @author: pietrodeocre
 '''
-from Tkinter import *
-from click.decorators import command
+from tkinter import *
+
 
 if __name__ == '__main__':
     
