@@ -7,8 +7,6 @@ Created on 15 jun. 2019
 from tkinter import *
 
 
-
-
 if __name__ == '__main__':
     
     #-----Raiz-----
@@ -26,7 +24,9 @@ if __name__ == '__main__':
     numero=StringVar()
     operacion=""
     resultado=0
-
+    op = ""
+    division=0
+    
     #-----Pantalla-----
     
     pantalla= Entry(miFrame, textvariable=numero)
@@ -41,10 +41,12 @@ if __name__ == '__main__':
     def numeroPulsado(num):
         
         global operacion
+        global op
+        
         
         if operacion!="":
             numero.set(num)
-            
+            op=operacion
             operacion=""
             
         else:
@@ -53,20 +55,30 @@ if __name__ == '__main__':
         
     def division(num):
         global operacion
-        
         global resultado
+        global division
+        dividendo = int(resultado)
         
-        resultado=resultado//float(num)
+        divisor = int(num)
+        
+        division = divide(dividendo,divisor)
+        
+        resultado=str(division)
+        
         operacion = "division"
         
         numero.set(resultado)
+        
+        
+    def divide(dividendo, divisor):
+        return int(dividendo/(divisor))
         
     def multiplicacion(num):
         global operacion
         
         global resultado
         
-        resultado=resultado*float(num)
+        resultado*=int(num)
         operacion = "multiplicacion"
         
         numero.set(resultado)
@@ -76,31 +88,51 @@ if __name__ == '__main__':
         
         global resultado
         
-        resultado=resultado-float(num)
+        resultado=int(num)-int(resultado)
         operacion = "resta"
         
-        numero.set(+resultado)
+        numero.set(resultado)
+
+        
         
     def suma(num):
         global operacion
         
         global resultado
         
-        resultado+=float(num)
+        resultado+=int(num)
         operacion = "suma"
         
         numero.set(resultado)
         
     def resultadoTotal():
         global resultado
+        global operacion
+        global op
+        if op=="suma":
+            numero.set(resultado+int(numero.get()))
+            resultado=0
+        elif op=="resta":
+            numero.set(resultado-int(numero.get()))
+            resultado=0
+        elif op=="multiplicacion":
+            numero.set(resultado*numero.get())
         
-        numero.set(resultado+float(numero.get()))
+        elif op=="division":
+            numero.set(float(resultado)/float(numero.get()))
+            
         
-        resultado=0
+        op = ""
+        operacion = ""
+        
         
     def clean():
-
+        
+        global resultado
+        global operacion
+        resultado=0
         numero.set(0)
+        operacion = ""
         
     
     #-----fila1-----
@@ -142,8 +174,8 @@ if __name__ == '__main__':
     
     boton0=Button(miFrame, text="0", command=lambda:numeroPulsado("0"), width=3)
     boton0.grid(row=5, column=1)
-    decimal=Button(miFrame, text=",", command=lambda:numeroPulsado("."), width=3)
-    decimal.grid(row=5, column=2)
+    #decimal=Button(miFrame, text=",", command=lambda:numeroPulsado("."), width=3)
+    #decimal.grid(row=5, column=2)
     igual=Button(miFrame, text="=", command=lambda:resultadoTotal(), width=3)
     igual.grid(row=5, column=3)
     botonSuma=Button(miFrame, text="+", command=lambda:suma(numero.get()) , width=3)
