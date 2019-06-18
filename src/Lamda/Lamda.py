@@ -19,10 +19,27 @@ if __name__ == '__main__':
     
     '''
     
-    areaTriengulo = Lambda base,altura: (base*altura)/2
+    areaTriengulo = lambda base,altura: (base*altura)/2
     
     print(areaTriengulo(5,7))
     
+    alCubo = lambda numero:pow(numero,3)
+    
+    print(alCubo(13))
+    
+    destacaValor = lambda comision:"¡{}! €".format(comision)
+    
+    comision=15234
+    print(destacaValor(comision))
+    
+    '''
+    ña funcion lambda recive
+    nombreVariableContenedora = lambda variable: variable*2
+    al llamar a la variable conteneroda
+    podemos pasarle el parametro variable
+    y la funcion lambda realizara la accion que hay 
+    despues de los dos puntos con dicha variable
+    '''
     
     
     pass
