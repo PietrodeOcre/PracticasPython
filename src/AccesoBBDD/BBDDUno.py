@@ -11,12 +11,12 @@ if __name__ == '__main__':
     ############### CONFIGURAR ESTO ###################
     # Abre conexion con la base de datos
     #Conexion desde pc de casa
-    db = pymysql.connect("localhost","root","Mjcg1610pc1.2","python_pruebas")
+    #db = pymysql.connect("localhost","root","Mjcg1610pc1.2","python_pruebas")
     #
     #
     #Conexion desde portatil
     #192.168.1.89 Desde Casa
-    #db = pymysql.connect("192.168.1.89","pietro","1234","prueba1")
+    db = pymysql.connect("192.168.1.89","pietro","1234","prueba1")
     ##################################################
 
     # prepare a cursor object using cursor() method
@@ -61,8 +61,8 @@ if __name__ == '__main__':
     '''
     
     
-    '''
-    Consulta en portatil 
+    
+    #Consulta en portatil 
     pregunta = "SELECT * FROM prueba"
     
     cursor.execute(pregunta)
@@ -75,8 +75,33 @@ if __name__ == '__main__':
         apellidos = row[2]
         edad = row[3]
         print("id = {0}, nombre = {1}, apellidos = {2}, edad = {3}".format(id_user,nombre,apellidos,edad))
-    ''' 
-
+    
+    
+    
+    '''
+    Añadir columna para que sea clave principal 
+    y autoincrementada, cuando la base de datos ya 
+    tiene un campo de est tipo y estamos insertando
+    valores en lugar de poner ? para dicho campo
+    añadimos NULL en ese campo para que funcione la 
+    insercion
+    '''
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
 
     # desconecta del servidor
     db.close()
